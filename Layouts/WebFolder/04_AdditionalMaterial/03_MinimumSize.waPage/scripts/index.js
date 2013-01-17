@@ -9,10 +9,22 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
-		$$('demo1').addClass('thirds1');
-		$$('demo2').addClass('thirds2');
-		$$('demo3').addClass('thirds3');
+		var minH = 400;
+		var minW = 900;
 
+		$(window).resize(function(){
+			if($(window).width() < minW){
+				$('#container1').css("width", minW + "px");
+			} else {
+				$('#container1').css("width", "");
+			}
+
+			if($(window).height() < minH){
+				$('#container1').css("height", minH + "px");
+			} else {
+				$('#container1').css("height", "");
+			}
+		});
 	};// @lock
 
 // @region eventManager// @startlock

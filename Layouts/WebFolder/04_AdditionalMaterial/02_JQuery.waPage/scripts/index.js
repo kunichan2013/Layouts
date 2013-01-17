@@ -58,10 +58,10 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			$$(containerID).setSplitPosition(splitPosition);
 		}
 		
-		$('#' + containerID).resize(resizeSplit);	
+//		$('#' + containerID).resize(resizeSplit);	
 		
 		//Alternate Wakanda syntax
-//		$$(containerID).addListener("resize", resizeSplit);
+		$$(containerID).addListener("resize", resizeSplit);
 		//********** End Right Anchored Splitter ************
 	};// @lock
 
